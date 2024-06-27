@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15"></script>
+    <style>
+        #markmap {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <svg id="markmap"></svg>
+    <script src="./Themes_of_the_Bible_mind_map.js"></script>
+    <script>
+        const { Transformer } = window.markmap;
+        const transformer = new Transformer();
+        const { root } = transformer.transform(mindMapData);
+        const { Markmap } = window.markmap;
+        Markmap.create('#markmap', root);
+    </script>
+</body>
+</html>
